@@ -35,7 +35,7 @@ def get_messages_from_queue(queue_url):
         except KeyError:
             return
         entries = [
-            {'Id': msg['MessageId'], 'ReceiptHandle': msg['ReceiptHandle']}
+            {'Id': msg['essageId'], 'ReceiptHandle': msg['ReceiptHandle']}
             for msg in sqs_ms['Messages']
         ]
         sqs_ms = sqs_client.delete_message_batch(
